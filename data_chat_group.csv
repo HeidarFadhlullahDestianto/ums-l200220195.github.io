@@ -1,0 +1,581 @@
+text
+14/11/24 16.52 - Pesan dan panggilan dienkripsi secara end-to-end. Tidak seorang pun di luar chat ini, termasuk WhatsApp, yang dapat membaca atau mendengarkannya. Ketuk untuk info selengkapnya.
+14/11/24 16.52 - Anda Membuat Grup Ini
+14/11/24 16.52 - Yusra Infor: ‎pokemonDataset.zip (file terlampir)
+14/11/24 16.57 - zheika Infor: https://www.kaggle.com/datasets/mlippo/car-accidents-in-brazil-2017-2023
+21/11/24 16.03 - zheika Infor: <Media tidak disertakan>
+tugas kelompok 2
+21/11/24 16.03 - zheika Infor: dl tgl 27
+21/11/24 16.23 - ardiansyah Infor: <Media tidak disertakan>
+21/11/24 16.24 - Bagus Infor: Iki sing numpuk perwakilan lex?
+21/11/24 16.24 - Bagus Infor: Sorry yo aku bar operasi mergane gak iso melbu
+21/11/24 16.25 - ardiansyah Infor: Mbuh i dl seh suwe eg
+21/11/24 17.00 - zheika Infor: <Media tidak disertakan>
+25/11/24 16.20 - zheika Infor: sesok bar praktikum garap piye?
+25/11/24 16.21 - ardiansyah Infor: Manut
+25/11/24 16.21 - zheika Infor: @6289614705141 @6289525810545 enek kelas ora koe doan sesok?
+25/11/24 16.21 - Yusra Infor: ‎STK-20241125-WA0002.webp (file terlampir)
+25/11/24 17.18 - Heidar FD: Ora
+25/11/24 17.18 - zheika Infor: ‎STK-20241125-WA0004.webp (file terlampir)
+25/11/24 17.19 - zheika Infor: Wong 3 gas sesok
+26/11/24 11.31 - Bagus Infor: Aku control iki
+26/11/24 14.21 - ‎zheika Infor mengubah ikon grup ini
+02/12/24 05.40 - zheika Infor: Hee tugas DWDM e piye
+02/12/24 05.40 - zheika Infor: Rung buka i to aku
+02/12/24 05.40 - zheika Infor: ‎STK-20241202-WA0000.webp (file terlampir)
+02/12/24 06.04 - ardiansyah Infor: Podo
+02/12/24 10.10 - zheika Infor: ‎IMG-20241202-WA0001.jpg (file terlampir)
+02/12/24 10.11 - zheika Infor: Sesok kelompok an neh piye?
+02/12/24 10.13 - ardiansyah Infor: Manut kang
+02/12/24 10.16 - zheika Infor: Liyane piye lek
+02/12/24 10.39 - Heidar FD: DWDM kuwi?
+02/12/24 10.45 - zheika Infor: He eh
+03/12/24 07.41 - ardiansyah Infor: Ki ngko do iso kabeh ra cah
+03/12/24 08.01 - zheika Infor: @6289525810545 @6289614705141
+03/12/24 08.15 - Heidar FD: Kelompokkan to
+03/12/24 08.16 - zheika Infor: Iyoo
+03/12/24 08.30 - zheika Infor: Jam 10 gasss
+03/12/24 08.30 - zheika Infor: Koyo wingi panggon e
+03/12/24 09.25 - ardiansyah Infor: @6289525810545 iso ra we mek kemek
+03/12/24 09.34 - Heidar FD: Yow
+03/12/24 09.35 - ardiansyah Infor: <Media tidak disertakan>
+03/12/24 10.14 - zheika Infor: @6289525810545 nek ndi wooo
+03/12/24 10.20 - zheika Infor: Menggunakan dataset yang telah ditentukan pada Tugas Kelompok 1 dan 2, lakukan analisis dengan algoritma Naive Bayes. Untuk menganalisis data silakan menggunakan tool yang ada, seperti RapidMiner, Weka, R Studio, atau Python. Jika diperlukan, lakukan preprocessing terhadap dataset sebelum melakukan analisis.
+
+Hasil analisis meliputi:
+
+Tabel hasil klasifikasi menggunakan Naive Bayes.
+Grafik visualisasi dataset menggunakan Scatter Plot
+Hasil performa algoritma, meliputi Accuracy, Precision, dan Recall.
+Silakan copy semua hasil yang telah diperoleh ke dalam Ms Word, kemudian simpan file dalam format PDF.
+
+Setiap mahasiswa mengumpulkan file PDF secara mandiri, meskipun tugas dikerjakan secara berkelompok.
+
+Tulis Nomer Kelompok, NIM, Nama Mahasiswa, dan Nama Dataset pada halaman pertama file.
+
+Unggah file PDF paling lambat sesuai dengan batas akhir yang ditentukan.
+03/12/24 10.31 - Heidar FD: Ning ndi opwe
+03/12/24 10.31 - Heidar FD: Kowe
+03/12/24 10.34 - ardiansyah Infor: Untuk melakukan analisis menggunakan algoritma Naive Bayes pada dataset yang telah Anda berikan, kita akan menggunakan Google Colab. Berikut adalah langkah-langkah untuk melakukan preprocessing dan analisis:
+
+### Langkah 1: Import Libraries
+Pertama, kita perlu mengimpor library yang diperlukan.
+
+```python
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.naive_bayes import GaussianNB
+from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
+import matplotlib.pyplot as plt
+import seaborn as sns
+```
+
+### Langkah 2: Load Dataset
+Kita perlu memuat dataset ke dalam DataFrame.
+
+```python
+# Assuming the CSV file is uploaded to Google Colab
+data = pd.read_csv('your_dataset.csv')
+```
+
+### Langkah 3: Preprocessing
+Melakukan preprocessing dataset dengan mengubah nilai kategori menjadi numerik jika diperlukan dan menangani nilai yang hilang.
+
+```python
+# Check for missing values
+data = data.fillna(0)  # If there are missing values, fill them with 0 or appropriate value
+
+# Convert categorical features to numeric if necessary
+# Example: data['Type 1'] = data['Type 1'].astype('category').cat.codes
+
+# Drop columns that are not needed for Naive Bayes, like Image paths
+data = data.drop(['Image'], axis=1)
+```
+
+### Langkah 4: Split Dataset
+Membagi dataset menjadi data latih dan data uji.
+
+```python
+X = data.drop('Type 1', axis=1)  # Features
+y = data['Type 1']  # Target
+
+# Split dataset
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+```
+
+### Langkah 5: Train Naive Bayes Model
+Melatih model Naive Bayes dengan data latih.
+
+```python
+model = GaussianNB()
+model.fit(X_train, y_train)
+```
+
+### Langkah 6: Make Predictions
+Menggunakan model untuk memprediksi data uji.
+
+```python
+y_pred = model.predict(X_test)
+```
+
+### Langkah 7: Evaluate Model
+Menghitung metrik performa model seperti Accuracy, Precision, dan Recall.
+
+```python
+"print(""Accuracy:"", accuracy_score(y_test, y_pred))"
+"print(""Confusion Matrix:\n"", confusion_matrix(y_test, y_pred))"
+"print(""Classification Report:\n"", classification_report(y_test, y_pred))"
+```
+
+### Langkah 8: Visualize Data
+Membuat Scatter Plot untuk visualisasi dataset.
+
+```python
+plt.figure(figsize=(10, 6))
+sns.scatterplot(x='Attack', y='Defense', hue='Type 1', data=data)
+plt.title('Scatter Plot of Attack vs Defense')
+plt.show()
+```
+
+### Langkah 9: Tabel Hasil Klasifikasi
+Membuat tabel hasil klasifikasi.
+
+```python
+classification_results = pd.DataFrame({'Actual': y_test, 'Predicted': y_pred})
+print(classification_results)
+```
+
+Setelah menjalankan kode di atas pada Google Colab, Anda akan mendapatkan tabel hasil klasifikasi, scatter plot dari dataset, dan metrik performa dari model Naive Bayes. Pastikan file dataset Anda diunggah ke Google Colab dan sesuaikan nama file saat membaca CSV.
+03/12/24 10.35 - zheika Infor: Lantai 4 rinio
+03/12/24 10.35 - zheika Infor: # Import library
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.naive_bayes import GaussianNB
+from sklearn.metrics import accuracy_score, precision_score, recall_score, confusion_matrix, classification_report
+import seaborn as sns
+
+# 1. Load dataset
+data_path = '/mnt/data/pokedex.csv'
+data = pd.read_csv(data_path)
+
+# 2. Preprocessing Data
+# Menampilkan informasi awal dataset
+"print(""Informasi Dataset:\n"", data.info())"
+"print(""\nStatistik Deskriptif:\n"", data.describe())"
+
+# Memeriksa nilai yang hilang
+"print(""\nJumlah Nilai Hilang:\n"", data.isnull().sum())"
+
+# Drop atau imputasi nilai yang hilang jika ada
+data = data.dropna()  # Contoh: Drop baris dengan nilai hilang
+
+# Encoding jika diperlukan (misalnya untuk kolom kategori)
+# Misalnya ada kolom 'Type'
+if 'Type' in data.columns:
+    data['Type'] = data['Type'].astype('category').cat.codes
+
+# Membagi fitur dan target
+# Misalnya fitur adalah kolom ke-1 sampai ke-n, dan target ada di kolom 'Label'
+X = data.iloc[:, :-1]
+y = data.iloc[:, -1]
+
+# Split data menjadi training dan testing
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# 3. Model Naive Bayes
+model = GaussianNB()
+model.fit(X_train, y_train)
+
+# Prediksi pada data testing
+y_pred = model.predict(X_test)
+
+# Membuat tabel hasil klasifikasi
+conf_matrix = confusion_matrix(y_test, y_pred)
+"print(""\nConfusion Matrix:\n"", conf_matrix)"
+
+# 4. Visualisasi Scatter Plot
+# Contoh visualisasi 2 fitur pertama jika tersedia
+plt.figure(figsize=(8, 6))
+plt.scatter(X.iloc[:, 0], X.iloc[:, 1], c=y, cmap='viridis')
+plt.title('Scatter Plot Dataset')
+plt.xlabel('Feature 1')
+plt.ylabel('Feature 2')
+plt.colorbar(label='Label')
+plt.show()
+
+# 5. Evaluasi Performa
+accuracy = accuracy_score(y_test, y_pred)
+precision = precision_score(y_test, y_pred, average='weighted')
+recall = recall_score(y_test, y_pred, average='weighted')
+
+"print(""\nEvaluasi Performa:"")"
+"print(f""Accuracy: {accuracy:.2f}"")"
+"print(f""Precision: {precision:.2f}"")"
+"print(f""Recall: {recall:.2f}"")"
+"print(""\nClassification Report:\n"", classification_report(y_test, y_pred))"
+03/12/24 11.17 - ardiansyah Infor: Baik, saya akan membantu Anda melakukan analisis menggunakan algoritma Naive Bayes pada dataset Pokedex.csv dengan menggunakan Google Colab. Berikut adalah langkah-langkahnya:
+
+1. Membuka Google Colab dan mengimpor dataset Pokedex.csv.
+2. Melakukan preprocessing pada dataset, jika diperlukan.
+3. Menerapkan algoritma Naive Bayes untuk mengklasifikasikan data.
+4. Membuat tabel hasil klasifikasi menggunakan Naive Bayes.
+5. Membuat grafik visualisasi dataset menggunakan Scatter Plot.
+6. Menghitung performa algoritma, meliputi Accuracy, Precision, dan Recall.
+
+Berikut adalah kode Python yang dapat digunakan untuk melakukan analisis:
+
+```python
+# Impor library yang dibutuhkan
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.naive_bayes import GaussianNB
+from sklearn.metrics import accuracy_score, precision_score, recall_score
+import matplotlib.pyplot as plt
+
+# Baca dataset Pokedex.csv
+df = pd.read_csv('Pokedex.csv')
+
+# Lakukan preprocessing, jika diperlukan
+# Misalnya, menangani data yang hilang atau melakukan encoding pada fitur kategorikal
+
+# Pisahkan fitur dan label
+X = df.drop('Type 1', axis=1)
+y = df['Type 1']
+
+# Bagi data menjadi data latih dan data uji
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Terapkan algoritma Naive Bayes
+clf = GaussianNB()
+clf.fit(X_train, y_train)
+y_pred = clf.predict(X_test)
+
+# Buat tabel hasil klasifikasi
+confusion_matrix = pd.crosstab(y_test, y_pred, rownames=['Actual'], colnames=['Predicted'])
+"print(""Tabel Hasil Klasifikasi:"")"
+print(confusion_matrix)
+
+# Buat grafik visualisasi dataset menggunakan Scatter Plot
+plt.figure(figsize=(10, 6))
+plt.scatter(X['HP'], X['Attack'], c=y, cmap='viridis')
+plt.xlabel('HP')
+plt.ylabel('Attack')
+plt.title('Scatter Plot of Pokedex Data')
+plt.show()
+
+# Hitung performa algoritma
+accuracy = accuracy_score(y_test, y_pred)
+precision = precision_score(y_test, y_pred, average='macro')
+recall = recall_score(y_test, y_pred, average='macro')
+
+"print(""Performa Algoritma:"")"
+"print(""Accuracy:"", accuracy)"
+"print(""Precision:"", precision)"
+"print(""Recall:"", recall)"
+```
+
+Catatan:
+- Pastikan Anda telah menginstal library yang dibutuhkan, seperti `pandas`, `scikit-learn`, dan `matplotlib`.
+- Jika dataset `Pokedex.csv` tidak ada di direktori Anda, Anda perlu mengubah jalur file sesuai dengan lokasi file di komputer Anda.
+- Jika diperlukan, lakukan preprocessing pada dataset, seperti menangani data yang hilang atau melakukan encoding pada fitur kategorikal.
+
+Setelah menjalankan kode di atas, Anda akan mendapatkan:
+1. Tabel hasil klasifikasi menggunakan Naive Bayes.
+2. Grafik visualisasi dataset menggunakan Scatter Plot.
+3. Hasil performa algoritma, meliputi Accuracy, Precision, dan Recall.
+
+Semoga ini membantu! Jika Anda memiliki pertanyaan atau membutuhkan bantuan lebih lanjut, jangan ragu untuk bertanya.
+03/12/24 12.18 - zheika Infor: # Import library
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.naive_bayes import GaussianNB
+from sklearn.metrics import accuracy_score, precision_score, recall_score, confusion_matrix, classification_report
+import seaborn as sns
+
+# 1. Load dataset
+data_path = '/mnt/data/pokedex.csv'
+data = pd.read_csv(data_path)
+
+# 2. Preprocessing Data
+# Menampilkan informasi awal dataset
+"print(""Informasi Dataset:\n"", data.info())"
+"print(""\nStatistik Deskriptif:\n"", data.describe())"
+
+# Memeriksa nilai yang hilang
+"print(""\nJumlah Nilai Hilang:\n"", data.isnull().sum())"
+
+# Drop atau imputasi nilai yang hilang jika ada
+data = data.dropna()  # Contoh: Drop baris dengan nilai hilang
+
+# Drop kolom gambar jika ada
+if 'image' in data.columns:
+    data = data.drop(columns=['image'])
+
+# Encoding untuk semua kolom kategori
+for column in data.select_dtypes(include=['object']).columns:
+    data[column] = data[column].astype('category').cat.codes
+
+# Membagi fitur dan target
+# Misalnya fitur adalah kolom ke-1 sampai ke-n, dan target ada di kolom terakhir
+X = data.iloc[:, :-1]
+y = data.iloc[:, -1]
+
+# Split data menjadi training dan testing
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# 3. Model Naive Bayes
+model = GaussianNB()
+model.fit(X_train, y_train)
+
+# Prediksi pada data testing
+y_pred = model.predict(X_test)
+
+# Membuat tabel hasil klasifikasi
+conf_matrix = confusion_matrix(y_test, y_pred)
+"print(""\nConfusion Matrix:\n"", conf_matrix)"
+
+# Heatmap Confusion Matrix
+plt.figure(figsize=(8, 6))
+sns.heatmap(conf_matrix, annot=True, fmt='d', cmap='Blues', xticklabels=np.unique(y), yticklabels=np.unique(y))
+plt.title('Confusion Matrix Heatmap')
+plt.xlabel('Predicted')
+plt.ylabel('Actual')
+plt.show()
+
+# 4. Visualisasi Scatter Plot
+# Visualisasi fitur-fitur dengan lebih banyak fleksibilitas
+plt.figure(figsize=(10, 8))
+for i in range(0, X.shape[1], 2):  # Menampilkan scatter plot untuk setiap pasangan fitur
+    plt.scatter(X.iloc[:, i], X.iloc[:, (i+1) % X.shape[1]], c=y, cmap='viridis', alpha=0.6)
+    plt.title(f'Scatter Plot antara Fitur {i+1} dan Fitur {(i+1) % X.shape[1] + 1}')
+    plt.xlabel(f'Fitur {i+1}')
+    plt.ylabel(f'Fitur {(i+1) % X.shape[1] + 1}')
+    plt.colorbar(label='Label')
+    plt.show()
+
+# Histogram untuk distribusi kelas target
+plt.figure(figsize=(8, 6))
+y.value_counts().plot(kind='bar', color='skyblue')
+plt.title('Distribusi Kelas Target')
+plt.xlabel('Kelas')
+plt.ylabel('Jumlah')
+plt.show()
+
+# 5. Evaluasi Performa
+accuracy = accuracy_score(y_test, y_pred)
+precision = precision_score(y_test, y_pred, average='weighted')
+recall = recall_score(y_test, y_pred, average='weighted')
+
+"print(""\nEvaluasi Performa:"")"
+"print(f""Accuracy: {accuracy:.2f}"")"
+"print(f""Precision: {precision:.2f}"")"
+"print(f""Recall: {recall:.2f}"")"
+"print(""\nClassification Report:\n"", classification_report(y_test, y_pred))"
+03/12/24 13.45 - zheika Infor: <Media tidak disertakan>
+POKEMON.ipynb
+03/12/24 13.45 - zheika Infor: template laporan menyusul
+03/12/24 13.52 - zheika Infor: ‎DWDM TUGAS MINGGU KE 3.docx (file terlampir)
+DWDM TUGAS MINGGU KE 3.docx
+04/12/24 09.31 - ardiansyah Infor: Untuk menganalisis dataset menggunakan algoritma Naive Bayes, saya akan memberikan panduan menggunakan Python dengan library scikit-learn dan matplotlib untuk visualisasi. Berikut adalah langkah-langkah dan kode yang dapat Anda gunakan:
+
+### Langkah-langkah:
+
+1. **Membaca dan Memahami Dataset:**
+   - Pastikan dataset dalam format yang bisa dibaca seperti CSV.
+   - Identifikasi fitur yang relevan untuk klasifikasi.
+
+2. **Preprocessing Data:**
+   - Hilangkan kolom yang tidak diperlukan.
+   - Konversi tipe data jika diperlukan, terutama untuk fitur kategorikal.
+
+3. **Pembagian Dataset:**
+   - Bagi dataset menjadi data latih dan data uji.
+
+4. **Membangun Model Naive Bayes:**
+   - Gunakan Gaussian Naive Bayes atau varian lain yang sesuai.
+
+5. **Evaluasi Model:**
+   - Hitung metrik seperti Accuracy, Precision, dan Recall.
+
+6. **Visualisasi Data:**
+   - Gunakan Scatter Plot untuk melihat sebaran data.
+
+### Kode Python:
+
+```python
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.naive_bayes import GaussianNB
+from sklearn.metrics import accuracy_score, precision_score, recall_score, classification_report
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Membaca dataset
+# Gantilah 'path_to_csv' dengan path yang sesuai
+data = pd.read_csv('path_to_csv')
+
+# Preprocessing data
+# Misal kita ingin memprediksi 'Type 1' berdasarkan fitur statistik
+X = data[['HP', 'Attack', 'Defense', 'SP. Atk.', 'SP. Def', 'Speed']]
+y = data['Type 1']
+
+# Split data menjadi data latih dan data uji
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Membuat model Naive Bayes
+model = GaussianNB()
+model.fit(X_train, y_train)
+
+# Prediksi
+y_pred = model.predict(X_test)
+
+# Evaluasi performa
+accuracy = accuracy_score(y_test, y_pred)
+precision = precision_score(y_test, y_pred, average='macro')
+recall = recall_score(y_test, y_pred, average='macro')
+
+"print(""Accuracy:"", accuracy)"
+"print(""Precision:"", precision)"
+"print(""Recall:"", recall)"
+"print(""\nClassification Report:\n"", classification_report(y_test, y_pred))"
+
+# Visualisasi dengan Scatter Plot
+plt.figure(figsize=(10, 6))
+sns.scatterplot(x='Attack', y='Defense', hue='Type 1', data=data)
+plt.title('Scatter Plot of Pokemon Dataset')
+plt.xlabel('Attack')
+plt.ylabel('Defense')
+plt.legend(loc='upper right')
+plt.show()
+```
+
+### Penjelasan:
+
+- **Preprocessing:** Kita hanya menggunakan fitur statistik seperti `HP`, `Attack`, `Defense`, `SP. Atk.`, `SP. Def`, dan `Speed` untuk prediksi tipe Pokémon `Type 1`.
+- **Evaluasi:** Menggunakan metrik accuracy, precision, dan recall untuk menilai performa model.
+- **Visualisasi:** Scatter Plot menampilkan hubungan antara `Attack` dan `Defense` dengan warna yang menunjukkan `Type 1` dari Pokémon.
+
+Pastikan untuk mengganti `path_to_csv` dengan path yang benar ke file dataset Anda. Jalankan kode ini di lingkungan Python seperti Jupyter Notebook atau terminal yang mendukung Python.
+04/12/24 20.01 - zheika Infor: <Media tidak disertakan>
+DWDM_C_TUGAS 3_KELOMPOK 7.pdf
+05/12/24 16.39 - ‎zheika Infor menambahkan ~ Bagoes Af
+05/12/24 16.48 - zheika Infor: <Media tidak disertakan>
+05/12/24 16.48 - zheika Infor: <Media tidak disertakan>
+05/12/24 16.48 - zheika Infor: <Media tidak disertakan>
+05/12/24 16.48 - zheika Infor: <Media tidak disertakan>
+09/12/24 18.17 - zheika Infor: Sesok ngerjane tugas lek
+09/12/24 18.17 - zheika Infor: Jam 10
+09/12/24 18.17 - ardiansyah Infor: Oke
+09/12/24 18.18 - +62 838-7893-3310: Meh nang ndi lek nggarap  e
+09/12/24 18.18 - zheika Infor: Seng jelas kudu enek colokan ro wifi
+09/12/24 18.18 - ardiansyah Infor: Kampus
+09/12/24 18.18 - zheika Infor: ‎STK-20241209-WA0014.webp (file terlampir)
+09/12/24 18.18 - zheika Infor: BEM FKI ra sih ko wingi ae
+09/12/24 18.19 - zheika Infor: Enek wong pusat og @6289525810545
+09/12/24 18.46 - ardiansyah Infor: Tambahkan sedikit olor
+09/12/24 18.53 - zheika Infor: Bagian gowo olor sopo🤣
+09/12/24 18.53 - Bagus Infor: Yangg ngekos
+09/12/24 18.54 - zheika Infor: Koe to
+09/12/24 18.54 - zheika Infor: Wong kene ki seng ngekos gur koe
+09/12/24 18.54 - Bagus Infor: Aku nang wng boss
+09/12/24 18.54 - Bagus Infor: Sing tenang bosku sesok tak gawakne
+09/12/24 18.54 - zheika Infor: Gowo olor mu
+09/12/24 18.55 - zheika Infor: Nahh
+09/12/24 18.55 - zheika Infor: Nek ra lali
+09/12/24 18.55 - Bagus Infor: Yoo tak gowokne
+09/12/24 18.55 - zheika Infor: ‎STK-20241029-WA0013.webp (file terlampir)
+09/12/24 18.55 - Bagus Infor: Tapi rodok lobok ra ppopo yo
+09/12/24 18.55 - Bagus Infor: Iseh iso dinggo
+09/12/24 18.56 - zheika Infor: Menting keno dienggo
+10/12/24 08.13 - zheika Infor: @6283878933310 @6289614705141 ojo lali gowo olor e
+10/12/24 08.54 - +62 838-7893-3310: Okhey
+10/12/24 08.54 - +62 838-7893-3310: Nggowo o cas yo
+10/12/24 08.54 - +62 838-7893-3310: Aku lagi melek iki
+10/12/24 08.54 - zheika Infor: Ra gowo bjir
+10/12/24 08.54 - zheika Infor: Cas hp o?
+10/12/24 08.55 - +62 838-7893-3310: Hooh
+10/12/24 08.55 - zheika Infor: Heidar kon gowo
+10/12/24 08.55 - zheika Infor: @6289525810545 gowo cas
+10/12/24 09.03 - Heidar FD: Yow
+10/12/24 09.13 - zheika Infor: sipp
+10/12/24 09.42 - zheika Infor: Wes teko @6283878933310 ?
+10/12/24 09.46 - +62 838-7893-3310: Durung
+10/12/24 09.46 - +62 838-7893-3310: Tkn skh
+10/12/24 09.46 - +62 838-7893-3310: Rodok macet
+10/12/24 09.47 - zheika Infor: peningkatan
+10/12/24 09.48 - ardiansyah Infor: ‎STK-20241210-WA0020.webp (file terlampir)
+10/12/24 09.55 - +62 838-7893-3310: Sabar boss
+10/12/24 09.57 - zheika Infor: Oke wan
+10/12/24 09.59 - zheika Infor: Munggah o lantai 3 nek wes teko
+10/12/24 10.09 - +62 838-7893-3310: Oke
+10/12/24 10.10 - zheika Infor: Wes teko urung jane
+10/12/24 10.16 - +62 838-7893-3310: Soba njir
+10/12/24 10.17 - zheika Infor: Suwe men
+10/12/24 10.23 - zheika Infor: <Media tidak disertakan>
+TUGAS 2 pohon keputusan.ipynb
+10/12/24 10.23 - zheika Infor: <Media tidak disertakan>
+pukimon.ipynb
+10/12/24 10.34 - zheika Infor: # Import pustaka yang diperlukan
+import pandas as pd
+from sklearn.tree import DecisionTreeClassifier, plot_tree
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
+import matplotlib.pyplot as plt
+from sklearn.tree import plot_tree
+10/12/24 10.35 - zheika Infor: # Langkah 1: Baca dataset
+# Ganti 'steam_game_reviews.csv' dengan nama file Anda
+data = pd.read_csv('steam_game_reviews.csv')
+10/12/24 10.35 - zheika Infor: # Langkah 2: Preprocessing
+# Pilih kolom target (recommendation) dan fitur (hours_played, helpful, funny)
+features = ['hours_played', 'helpful', 'funny']
+target = 'recommendation'
+10/12/24 10.35 - zheika Infor: # Ubah target menjadi numerik
+label_encoder = LabelEncoder()
+data[target] = label_encoder.fit_transform(data[target])
+10/12/24 10.35 - zheika Infor: # Tangani nilai kosong (jika ada)
+data = data.dropna()
+10/12/24 10.37 - zheika Infor: # Ubah kolom dengan tanda koma menjadi float
+data['hours_played'] = data['hours_played'].str.replace(',', '').astype(float)
+data['helpful'] = data['helpful'].str.replace(',', '').astype(float)
+data['funny'] = data['funny'].str.replace(',', '').astype(float)
+10/12/24 10.37 - zheika Infor: # Pisahkan data menjadi X (fitur) dan Y (target)
+X = data[features]
+y = data[target]
+10/12/24 10.37 - zheika Infor: # Bagi data menjadi data latih dan uji
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+10/12/24 10.37 - zheika Infor: # Langkah 3: Melatih Pohon Keputusan
+clf = DecisionTreeClassifier(criterion='entropy', max_depth=3, random_state=42)
+clf.fit(X_train, y_train)
+10/12/24 10.37 - +62 838-7893-3310: ‎PTT-20241210-WA0021.opus (file terlampir)
+10/12/24 10.37 - +62 838-7893-3310: ‎PTT-20241210-WA0022.opus (file terlampir)
+10/12/24 10.37 - zheika Infor: # Langkah 4: Gambar Pohon Keputusan
+plt.figure(figsize=(12, 8))
+"plot_tree(clf, feature_names=X.columns, class_names=[""Not Recommended"", ""Recommended""], filled=True, rounded=True, fontsize=10)"
+plt.show()
+10/12/24 10.38 - zheika Infor: from sklearn.tree import export_text
+
+rules = export_text(clf, feature_names=list(X.columns))
+"print(""Rules:\n"", rules)"
+10/12/24 10.38 - zheika Infor: y_pred = clf.predict(X_test)
+10/12/24 10.38 - zheika Infor: from sklearn.metrics import accuracy_score, precision_score, recall_score
+
+"print(""Accuracy:"", accuracy_score(y_test, y_pred))"
+"print(""Precision:"", precision_score(y_test, y_pred, average='binary'))"
+"print(""Recall:"", recall_score(y_test, y_pred, average='binary'))"
+10/12/24 10.40 - zheika Infor: Ngenggo iki
+kotak, bawah, L2, atas, L1, bulat, atas, X, kiri.
+10/12/24 10.49 - ardiansyah Infor: Setelah melakukan analisis menggunakan metode Pohon Keputusan pada dataset `pokedex.csv`, kita dapat menyimpulkan beberapa hal penting. Model Pohon Keputusan yang dibangun menggunakan kriteria Information Gain berhasil mengidentifikasi fitur-fitur yang paling berpengaruh dalam memprediksi 'Type 1' dari setiap Pokémon. Fitur seperti 'Total', 'Attack', dan 'Defense' memainkan peran penting dalam klasifikasi ini. Visualisasi pohon keputusan menunjukkan bagaimana keputusan dibuat pada setiap node berdasarkan nilai dari fitur-fitur ini, menghasilkan aturan-aturan yang dapat diinterpretasikan untuk memahami pola dalam data.
+
+Dari segi performa, model menunjukkan tingkat akurasi yang memadai, dengan nilai Precision dan Recall yang menunjukkan keseimbangan antara meminimalkan false positives dan false negatives. Ini menunjukkan bahwa model tidak hanya akurat dalam prediksi keseluruhan, tetapi juga efektif dalam mengidentifikasi tipe dengan benar tanpa terlalu banyak kesalahan. Namun, seperti semua model, ada ruang untuk perbaikan lebih lanjut, seperti penyesuaian hyperparameter atau penggunaan teknik ensemble untuk meningkatkan akurasi dan generalisasi model. Analisis ini memberikan wawasan tentang atribut mana yang signifikan dan bagaimana mereka berkontribusi dalam menentukan tipe Pokémon, yang dapat berguna dalam strategi permainan atau penelitian lebih lanjut.
+10/12/24 10.52 - ardiansyah Infor: ‎Pukitod.ipynb (file terlampir)
+Pukitod.ipynb
+10/12/24 10.55 - +62 838-7893-3310: Neng ndi?
+10/12/24 10.55 - Heidar FD: Lt 3
+10/12/24 11.13 - zheika Infor: ‎DWDM_C_TUGAS 4_KELOMPOK 7.pdf (file terlampir)
+DWDM_C_TUGAS 4_KELOMPOK 7.pdf
+10/12/24 16.15 - ‎zheika Infor mengubah ikon grup ini

@@ -1,0 +1,24 @@
+text,cleaned_text
+ yang dapat membaca atau mendengarkannya. Ketuk untuk info selengkapnya., yang dapat membaca atau mendengarkannya. Ketuk untuk info selengkapnya.
+ accuracy_score, accuracyscore
+ dan Recall., dan Recall.
+ average='weighted'), averageweighted
+ average='weighted'), averageweighted
+ recall_score, recallscore
+ average='macro'), averagemacro
+ average='macro'), averagemacro
+ seperti menangani data yang hilang atau melakukan encoding pada fitur kategorikal., seperti menangani data yang hilang atau melakukan encoding pada fitur kategorikal.
+ 2):  # Menampilkan scatter plot untuk setiap pasangan fitur, 2   Menampilkan scatter plot untuk setiap pasangan fitur
+ average='weighted'), averageweighted
+ average='weighted'), averageweighted
+ dan Recall., dan Recall.
+ average='macro'), averagemacro
+ average='macro'), averagemacro
+ dan recall untuk menilai performa model., dan recall untuk menilai performa model.
+ funny), funny
+ 'funny'], funny
+ '').astype(float), .astypefloat
+ '').astype(float), .astypefloat
+ '').astype(float), .astypefloat
+ random_state=42), randomstate42
+ recall_score, recallscore
